@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <th:block th:each="msg : ${messages}">
+        <h1 th:text="${msg}"></h1>
+    </th:block>
+
+    <div>
+        <h1 th:utext="I push my finger"></h1>
+        <div>
+            <table border="1">
+                <tr>
+                    <th th:utext="Model"></th>
+                    <th th:utext="Series"></th>
+                    <th th:utext="Color">
+                </tr>
+                <th:block th:each="car : ${cars}">
+                    <tr>
+                        <td th:utext="${car.getModel()}"></td>
+                        <td th:utext="${car.getSeries()}"></td>
+                        <td th:utext="${car.getColor()}"></td>
+                    </tr>
+                </th:block>
+            </table>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
